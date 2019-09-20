@@ -1023,7 +1023,7 @@ REPLACE INTO `item_db_re` VALUES (1635,'BF_Staff4','Speedy Recovery Wand',5,20,N
 REPLACE INTO `item_db_re` VALUES (1636,'Thorn_Staff','Thorn Staff of Darkness',5,20,NULL,700,'60:160',NULL,1,0,0x00018314,18,2,2,4,'75',1,10,'bonus bAtkEle,Ele_Dark; bonus bInt,3; bonus bDex,3; .@r = getrefine(); bonus2 bIgnoreMdefClassRate,Class_Normal,.@r; bonus2 bIgnoreMdefClassRate,Class_Boss,.@r; bonus bDelayRate,-(.@r*3/2);',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (1637,'Eraser','Eraser',5,20,NULL,500,'80:170',NULL,1,0,0x00018314,18,2,2,4,'70',1,10,'bonus bInt,3; bonus bDex,2; bonus bSPrecovRate,8; bonus5 bAutoSpell,"NPC_WIDESOULDRAIN",(getrefine()>9?3:1),5,BF_MAGIC,0;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (1638,'Healing_Staff_C','Staff Of Healing',5,20,NULL,0,'10:125',NULL,1,0,0x00008110,63,2,2,3,'1',1,10,'bonus bAtkEle,Ele_Holy; bonus bMatkRate,15; bonus bHealPower,(getrefine()*3/2);',NULL,NULL);
-REPLACE INTO `item_db_re` VALUES (1639,'N_Rod','Novice Rod',5,0,NULL,0,'15:32',NULL,1,3,0x00818315,63,2,2,1,'1',0,10,'bonus bMatkRate,16;',NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (1639,'N_Rod','Novice Rod',5,0,NULL,0,'15:32',NULL,1,3,0x00818315,63,2,2,1,'1',0,10,NULL,NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (1640,'Krieger_Onehand_Staff1','Glorious Arc Wand',5,20,NULL,0,'70:135',NULL,1,0,0x00818314,63,2,2,4,'80',1,10,'bonus2 bMagicAddRace,RC_DemiHuman,15; bonus2 bMagicAddRace,RC_Player,15; .@r = getrefine(); bonus2 bIgnoreMdefRaceRate,RC_DemiHuman,25 + ((.@r > 5) ? 5 : 0); bonus2 bIgnoreMdefRaceRate,RC_Player,25 + ((.@r > 5) ? 5 : 0); bonus bUnbreakableWeapon; if(.@r > 8) { bonus bMatkRate,5; bonus bVariableCastrate,-5; bonus bDelayRate,-5; }',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (1641,'Krieger_Onehand_Staff2','Glorious Cure Wand',5,20,NULL,0,'70:135',NULL,1,0,0x00818314,63,2,2,4,'80',1,10,'bonus bHealPower,14; bonus bDelayRate,-10; bonus bUnbreakableWeapon; .@r = getrefine(); if(.@r > 5) { bonus2 bIgnoreMdefRaceRate,RC_DemiHuman,5; bonus2 bIgnoreMdefRaceRate,RC_Player,5; bonus bHealPower,5+(min(14,.@r)-5)*2; } if(.@r > 8) bonus5 bAutoSpellOnSkill,"AL_HEAL","AL_HEAL",10,100,1; if(.@r > 9) { bonus bHealPower,10; }',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (1642,'Staff_Of_Darkness','Staff Of Darkness',5,20,NULL,0,'100:120',NULL,1,0,0x00818314,63,2,2,2,'0',0,10,'bonus bVariableCastrate,-5; bonus bMatkRate,15; bonus bInt,2;',NULL,NULL);
@@ -6086,6 +6086,12 @@ REPLACE INTO `item_db_re` VALUES (9112,'Moonlight_Egg','Moonlight Egg',7,20,NULL
 REPLACE INTO `item_db_re` VALUES (9113,'Skelion_Egg','Skelion Egg',7,20,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (9114,'Pouring_Egg','Pouring Egg',7,20,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (9115,'Bacsojin2_Egg_','Bacsojin Egg',7,20,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (9116,'Rigid_Nightmare_Terror_Egg','Rigid Nightmare Terror Egg',7,20,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (9117,'Contaminated_Wanderer_Egg','Contaminated Wanderer Egg',7,20,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (9118,'Aliot_Egg','Aliot Egg',7,20,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (9119,'Alicel_Egg','Alicel Egg',7,20,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (9120,'Aliza_Egg','Aliza Egg',7,20,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (9121,'Orc_Hero_Egg_','Orc Hero Egg',7,20,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 #===================================================================
 # Pet Accessories
 #===================================================================
@@ -6297,6 +6303,10 @@ REPLACE INTO `item_db_re` VALUES (11600,'Shining_Holy_Water','Shining Holy Water
 REPLACE INTO `item_db_re` VALUES (11602,'Catnip_Fruit','Catnip Fruit',0,15,NULL,1,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(10,40),0;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (11601,'Delicious_Anchovy','Delicious Anchovy',0,20,NULL,30,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(30,46),0;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (11605,'Cookies_Bat','Cookie Bat',0,0,NULL,50,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(50,100),0; /*TODO*/',NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (11621,'Red_Syrup','Red Syrup',0,800,400,7,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,'60',NULL,NULL,'itemheal 325,0;',NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (11622,'Yellow_Syrup','Yellow Syrup',0,1200,600,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,'60',NULL,NULL,'itemheal 900,0;',NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (11623,'White_Syrup','White Syrup',0,1500,750,14,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,'60',NULL,NULL,'itemheal 1800,0;',NULL,NULL);
+REPLACE INTO `item_db_re` VALUES (11624,'Blue_Syrup','Blue Syrup',0,7000,3500,10,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,'60',NULL,NULL,'itemheal 0,180;',NULL,NULL);
 #
 REPLACE INTO `item_db_re` VALUES (11701,'Girl_Bunch_Of_Flower','Girl\'s Bouquet',0,20,NULL,50,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,'itemheal rand(105,145),0;',NULL,NULL);
 REPLACE INTO `item_db_re` VALUES (11702,'Moon_Cookie','Moon Cookie',0,0,NULL,300,NULL,NULL,NULL,NULL,0xFFFFFFFF,63,2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
