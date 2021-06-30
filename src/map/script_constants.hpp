@@ -1240,9 +1240,9 @@
 	export_constant(SC_LEECHESEND);
 	export_constant(SC_REFLECTDAMAGE);
 	export_constant(SC_FORCEOFVANGUARD);
-	export_constant(SC_SHIELDSPELL_DEF);
-	export_constant(SC_SHIELDSPELL_MDEF);
-	export_constant(SC_SHIELDSPELL_REF);
+	export_constant(SC_SHIELDSPELL_HP);
+	export_constant(SC_SHIELDSPELL_SP);
+	export_constant(SC_SHIELDSPELL_ATK);
 	export_constant(SC_EXEEDBREAK);
 	export_constant(SC_PRESTIGE);
 	export_constant(SC_BANDING);
@@ -1611,6 +1611,22 @@
 	export_constant(SC_EP16_2_BUFF_AC);
 	export_constant(SC_EMERGENCY_MOVE);
 	export_constant(SC_MADOGEAR);
+	export_constant(SC_NPC_HALLUCINATIONWALK);
+	export_constant(SC_OVERBRANDREADY);
+	export_constant(SC_POISON_MIST);
+	export_constant(SC_STONE_WALL);
+	export_constant(SC_CLOUD_POISON);
+	export_constant(SC_HOMUN_TIME);
+	export_constant(SC_PACKING_ENVELOPE1);
+	export_constant(SC_PACKING_ENVELOPE2);
+	export_constant(SC_PACKING_ENVELOPE3);
+	export_constant(SC_PACKING_ENVELOPE4);
+	export_constant(SC_PACKING_ENVELOPE5);
+	export_constant(SC_PACKING_ENVELOPE6);
+	export_constant(SC_PACKING_ENVELOPE7);
+	export_constant(SC_PACKING_ENVELOPE8);
+	export_constant(SC_PACKING_ENVELOPE9);
+	export_constant(SC_PACKING_ENVELOPE10);
 #ifdef RENEWAL
 	export_constant(SC_EXTREMITYFIST2);
 #endif
@@ -4601,12 +4617,12 @@
 	export_constant(IM_CLAN);
 
 	/* mob random groups */
-	export_constant(MOBG_Branch_Of_Dead_Tree);
-	export_constant(MOBG_Poring_Box);
-	export_constant(MOBG_Bloody_Dead_Branch);
-	export_constant(MOBG_Red_Pouch_Of_Surprise);
-	export_constant(MOBG_ClassChange);
-	export_constant(MOBG_Taekwon_Mission);
+	export_constant(MOBG_BRANCH_OF_DEAD_TREE);
+	export_constant(MOBG_PORING_BOX);
+	export_constant(MOBG_BLOODY_DEAD_BRANCH);
+	export_constant(MOBG_RED_POUCH_OF_SURPRISE);
+	export_constant(MOBG_CLASSCHANGE);
+	export_constant(MOBG_TAEKWON_MISSION);
 
 	/* random option attributes */
 	export_constant(ROA_ID);
@@ -5190,6 +5206,10 @@
 	export_constant(IG_PRIZEOFHERO);
 	export_constant(IG_PRIVATE_AIRSHIP);
 	export_constant(IG_TOKEN_OF_SIEGFRIED);
+	export_constant(IG_ENCHANT_STONE_BOX);
+	export_constant(IG_ENCHANT_STONE_BOX2);
+	export_constant(IG_ENCHANT_STONE_BOX3);
+	export_constant(IG_ENCHANT_STONE_BOX4);
 	export_constant(IG_ENCHANT_STONE_BOX5);
 	export_constant(IG_ENCHANT_STONE_BOX6);
 	export_constant(IG_ENCHANT_STONE_BOX7);
@@ -5201,6 +5221,12 @@
 	export_constant(IG_ENCHANT_STONE_BOX13);
 	export_constant(IG_ENCHANT_STONE_BOX14);
 	export_constant(IG_ENCHANT_STONE_BOX15);
+	export_constant(IG_ENCHANT_STONE_BOX16);
+	export_constant(IG_ENCHANT_STONE_BOX17);
+	export_constant(IG_ENCHANT_STONE_BOX18);
+	export_constant(IG_ENCHANT_STONE_BOX19);
+	export_constant(IG_ENCHANT_STONE_BOX20);
+	export_constant(IG_ENCHANT_STONE_BOX21);
 
 	/* unit stop walking */
 	export_constant(USW_NONE);
@@ -5211,6 +5237,7 @@
 	export_constant(USW_ALL);
 
 	/* achievement groups */
+	export_constant(AG_NONE);
 	export_constant(AG_ADD_FRIEND);
 	export_constant(AG_ADVENTURE);
 	export_constant(AG_BABY);
@@ -5253,17 +5280,18 @@
 
 	/* refine cost types */
 	export_constant(REFINE_COST_NORMAL);
-	export_constant(REFINE_COST_OVER10);
+	export_deprecated_constant3("REFINE_COST_OVER10", REFINE_COST_NORMAL, "REFINE_COST_NORMAL");
 	export_constant(REFINE_COST_HD);
 	export_constant(REFINE_COST_ENRICHED);
-	export_constant(REFINE_COST_OVER10_HD);
-	export_constant(REFINE_COST_HOLINK);
-	export_constant(REFINE_COST_WAGJAK);
+	export_deprecated_constant3("REFINE_COST_OVER10_HD", REFINE_COST_HD, "REFINE_COST_HD");
+	// These two have been re-hardcoded, but better default to normal than provide nothing
+	export_deprecated_constant3("REFINE_COST_HOLINK", REFINE_COST_NORMAL, "REFINE_COST_NORMAL");
+	export_deprecated_constant3("REFINE_COST_WAGJAK", REFINE_COST_NORMAL, "REFINE_COST_NORMAL");
 	export_constant(REFINE_COST_MAX);
 
 	/* refine information types */
-	script_set_constant("REFINE_MATERIAL_ID", 0, false, false);
-	script_set_constant("REFINE_ZENY_COST", 1, false, false);
+	export_constant(REFINE_MATERIAL_ID);
+	export_constant(REFINE_ZENY_COST);
 
 	/* NPC view ids */
 	// Special macro to strip the prefix 'JT_'
@@ -8070,6 +8098,33 @@
 	/* madogears */
 	export_constant(MADO_ROBOT);
 	export_constant(MADO_SUIT);
+
+	/* getiteminfo/setiteminfo script commands */
+	export_constant(ITEMINFO_BUY);
+	export_constant(ITEMINFO_SELL);
+	export_constant(ITEMINFO_TYPE);
+	export_constant(ITEMINFO_MAXCHANCE);
+	export_constant(ITEMINFO_GENDER);
+	export_constant(ITEMINFO_LOCATIONS);
+	export_constant(ITEMINFO_WEIGHT);
+	export_constant(ITEMINFO_ATTACK);
+	export_constant(ITEMINFO_DEFENSE);
+	export_constant(ITEMINFO_RANGE);
+	export_constant(ITEMINFO_SLOT);
+	export_constant(ITEMINFO_VIEW);
+	export_constant(ITEMINFO_EQUIPLEVELMIN);
+	export_constant(ITEMINFO_WEAPONLEVEL);
+	export_constant(ITEMINFO_ALIASNAME);
+	export_constant(ITEMINFO_EQUIPLEVELMAX);
+	export_constant(ITEMINFO_MAGICATTACK);
+	export_constant(ITEMINFO_ID);
+	export_constant(ITEMINFO_AEGISNAME);
+
+	/* refine types */
+	export_constant(REFINE_TYPE_ARMOR);
+	export_constant(REFINE_TYPE_WEAPON);
+	export_constant(REFINE_TYPE_SHADOW_ARMOR);
+	export_constant(REFINE_TYPE_SHADOW_WEAPON);
 
 	#undef export_constant
 	#undef export_constant2
